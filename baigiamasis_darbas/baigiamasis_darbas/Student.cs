@@ -10,15 +10,13 @@ namespace baigiamasis_darbas
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Surname { get; set; }
-        public int DiaryId { get; set; }
+        public List<int> SubjectIds { get; set; }
 
-        public Student(int id, string name, string surname, int diaryId)
+        public Student(int id, string name)
         {
             Id = id;
             Name = name;
-            Surname = surname;
-            DiaryId = diaryId;
+            SubjectIds = new GenerateRandom().GetSubjectIds();
         }
     }
 }
